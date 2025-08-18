@@ -89,18 +89,12 @@ const ServicesSection = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  // Placeholder for other services
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20">
-                    {/* Decorative pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="w-full h-full" 
-                           style={{
-                             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23DAA520' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10-10c5.5 0 10-4.5 10-10S35.5 0 30 0s-10 4.5-10 10 4.5 10 10 10z'/%3E%3C/g%3E%3C/svg%3E")`,
-                             backgroundSize: '40px 40px'
-                           }}
-                      />
-                    </div>
-                  </div>
+                  // Pagar Artistik image for third service
+                  <img 
+                    src="/lovable-uploads/a863cce6-1267-4c6b-b448-86127f24c8af.png" 
+                    alt="Pagar artistik bergaya Majapahit dengan kombinasi batu bata merah dan motif tradisional"
+                    className="w-full h-full object-cover"
+                  />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
