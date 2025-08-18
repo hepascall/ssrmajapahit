@@ -72,23 +72,35 @@ const ServicesSection = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden">
-              {/* Service Image Placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
+              {/* Service Image */}
+              <div className="h-48 relative overflow-hidden">
+                {index === 0 ? (
+                  // Gapura image for first service
+                  <img 
+                    src="/lovable-uploads/66564ebf-0242-4987-ad75-3fe5ef66047e.png" 
+                    alt="Gapura Majapahit bergaya tradisional dengan ornamen batu bata merah"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  // Placeholder for other services
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20">
+                    {/* Decorative pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="w-full h-full" 
+                           style={{
+                             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23DAA520' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10-10c5.5 0 10-4.5 10-10S35.5 0 30 0s-10 4.5-10 10 4.5 10 10 10z'/%3E%3C/g%3E%3C/svg%3E")`,
+                             backgroundSize: '40px 40px'
+                           }}
+                      />
+                    </div>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center space-x-2 text-white">
                     <service.icon className="w-6 h-6" />
                     <span className="font-semibold">{service.title}</span>
                   </div>
-                </div>
-                {/* Decorative pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="w-full h-full" 
-                       style={{
-                         backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23DAA520' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10-10c5.5 0 10-4.5 10-10S35.5 0 30 0s-10 4.5-10 10 4.5 10 10 10z'/%3E%3C/g%3E%3C/svg%3E")`,
-                         backgroundSize: '40px 40px'
-                       }}
-                  />
                 </div>
               </div>
 
