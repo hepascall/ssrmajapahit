@@ -81,6 +81,13 @@ const ServicesSection = () => {
                     alt="Gapura Majapahit bergaya tradisional dengan ornamen batu bata merah"
                     className="w-full h-full object-cover"
                   />
+                ) : index === 1 ? (
+                  // Ornamen Seni image for second service
+                  <img 
+                    src="/lovable-uploads/d01e1c78-25c7-4ba1-80b8-5f7298a6ed95.png" 
+                    alt="Ornamen tradisional Majapahit dengan motif mandala dan ukiran klasik"
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
                   // Placeholder for other services
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20">
