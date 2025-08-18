@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Crown, Phone, Mail, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
 
+// Custom TikTok Icon Component
+const TikTok = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
+
 const Footer = () => {
   const [currentYear] = useState(new Date().getFullYear());
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -40,20 +47,26 @@ const Footer = () => {
     {
       icon: Instagram,
       name: 'Instagram',
-      url: 'https://instagram.com/ssrmajapahit',
+      url: 'https://www.instagram.com/ahlinya_gapura_majapahit?igsh=aGh1bXh6ejAzaGN4',
       color: 'hover:text-pink-400'
     },
     {
       icon: Facebook,
       name: 'Facebook', 
-      url: 'https://facebook.com/ssrmajapahit',
+      url: 'https://www.facebook.com/share/1GW2z7JeMv/',
       color: 'hover:text-blue-400'
     },
     {
       icon: Youtube,
       name: 'YouTube',
-      url: 'https://youtube.com/ssrmajapahit',
+      url: 'https://youtube.com/@bangkiteko154?si=EYeyl_HZsSU10GGl',
       color: 'hover:text-red-400'
+    },
+    {
+      icon: TikTok,
+      name: 'TikTok',
+      url: 'https://vt.tiktok.com/ZSSTwKJrB',
+      color: 'hover:text-purple-400'
     }
   ];
 
@@ -165,7 +178,7 @@ const Footer = () => {
 
             {/* WhatsApp CTA */}
             <button
-              onClick={() => window.open('https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi%20dengan%20SSR%20Majapahit', '_blank')}
+              onClick={() => window.open('https://wa.me/6285714548773?text=Halo,%20saya%20ingin%20konsultasi%20dengan%20SSR%20Majapahit', '_blank')}
               className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg smooth-transition flex items-center justify-center space-x-2"
             >
               <Phone className="w-4 h-4" />

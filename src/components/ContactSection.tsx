@@ -15,6 +15,13 @@ import {
   Send
 } from 'lucide-react';
 
+// Custom TikTok Icon Component
+const TikTok = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
+
 const ContactSection = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -30,8 +37,8 @@ const ContactSection = () => {
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      value: '+62 812-3456-7890',
-      action: () => window.open('https://wa.me/6281234567890', '_blank'),
+      value: '+62 857-1454-8773',
+      action: () => window.open('https://wa.me/6285714548773', '_blank'),
       color: 'text-green-600'
     },
     {
@@ -61,23 +68,30 @@ const ContactSection = () => {
     {
       icon: Instagram,
       name: 'Instagram',
-      handle: '@ssrmajapahit',
-      url: 'https://instagram.com/ssrmajapahit',
+      handle: '@ahlinya_gapura_majapahit',
+      url: 'https://www.instagram.com/ahlinya_gapura_majapahit?igsh=aGh1bXh6ejAzaGN4',
       color: 'text-pink-600'
     },
     {
       icon: Facebook,
       name: 'Facebook',
       handle: 'SSR Majapahit Official',
-      url: 'https://facebook.com/ssrmajapahit',
+      url: 'https://www.facebook.com/share/1GW2z7JeMv/',
       color: 'text-blue-600'
     },
     {
       icon: Youtube,
       name: 'YouTube',
-      handle: 'SSR Majapahit Channel',
-      url: 'https://youtube.com/ssrmajapahit',
+      handle: 'Bangkit Eko Channel',
+      url: 'https://youtube.com/@bangkiteko154?si=EYeyl_HZsSU10GGl',
       color: 'text-red-600'
+    },
+    {
+      icon: TikTok,
+      name: 'TikTok',
+      handle: '@ahlinya_gapura',
+      url: 'https://vt.tiktok.com/ZSSTwKJrB',
+      color: 'text-purple-600'
     }
   ];
 
@@ -174,7 +188,7 @@ const ContactSection = () => {
                   className="w-full gold-gradient hover:opacity-90 smooth-transition text-lg py-3"
                   onClick={() => {
                     // In real implementation, collect form data and send to WhatsApp
-                    window.open('https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi%20proyek%20ornamen%20Majapahit', '_blank');
+                    window.open('https://wa.me/6285714548773?text=Halo,%20saya%20ingin%20konsultasi%20proyek%20ornamen%20Majapahit', '_blank');
                   }}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
