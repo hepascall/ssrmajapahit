@@ -73,7 +73,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden">
               {/* Service Image */}
-              <div className="h-48 relative overflow-hidden">
+              <div className="h-64 relative overflow-hidden">
                 {index === 0 ? (
                   // Gapura image for first service
                   <img 
