@@ -88,23 +88,21 @@ const AboutSection = () => {
             </Card>
           </div>
 
-          {/* Right Content - Team Image Placeholder */}
+          {/* Right Content - Team Photo */}
           <div className="relative">
-            <div className="aspect-[4/5] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden majapahit-shadow">
-              {/* Placeholder for team photo */}
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
-                <div className="text-center space-y-4">
-                  <div className="w-24 h-24 rounded-full gold-gradient flex items-center justify-center mx-auto">
-                    <Users className="w-12 h-12 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-primary">Tim Ahli SSR Majapahit</h4>
-                    <p className="text-muted-foreground">Tukang & Desainer Berpengalaman</p>
-                  </div>
-                </div>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden majapahit-shadow">
+              <img 
+                src="/lovable-uploads/0a3092d0-8599-449a-87d3-0a080e0db3ca.png" 
+                alt="Tim Ahli SSR Majapahit - Tukang dan desainer berpengalaman sedang bekerja di lokasi proyek"
+                className="w-full h-full object-cover"
+              />
+              {/* Overlay with team info */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h4 className="text-xl font-bold text-white mb-1">Tim Ahli SSR Majapahit</h4>
+                <p className="text-white/90">Tukang & Desainer Berpengalaman</p>
               </div>
               {/* Decorative border */}
-              <div className="absolute inset-4 border-2 border-secondary/30 rounded-xl pointer-events-none" />
+              <div className="absolute inset-4 border-2 border-white/20 rounded-xl pointer-events-none" />
             </div>
           </div>
         </div>
