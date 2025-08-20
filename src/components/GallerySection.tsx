@@ -208,7 +208,7 @@ const GallerySection = () => {
               <Button 
                 size="lg"
                 className="gold-gradient hover:opacity-90 smooth-transition"
-                onClick={() => window.open('https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20portofolio%20SSR%20Majapahit%20dan%20ingin%20konsultasi', '_blank')}
+                onClick={() => window.open('https://wa.me/6285714548773?text=Halo,%20saya%20tertarik%20dengan%20portofolio%20SSR%20Majapahit%20dan%20ingin%20konsultasi', '_blank')}
               >
                 Konsultasi Proyek
               </Button>

@@ -140,7 +140,7 @@ const ServicesSection = () => {
                     size="sm" 
                     variant="outline"
                     className="hover:bg-primary hover:text-white smooth-transition"
-                    onClick={() => window.open(`https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20layanan%20${service.title}`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/6285714548773?text=Halo,%20saya%20tertarik%20dengan%20layanan%20${service.title}`, '_blank')}
                   >
                     <MessageCircle className="w-4 h-4 mr-1" />
                     Konsultasi
@@ -191,7 +191,7 @@ const ServicesSection = () => {
                 <Button 
                   size="lg"
                   className="gold-gradient hover:opacity-90 smooth-transition"
-                  onClick={() => window.open('https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi%20gratis%20untuk%20proyek%20ornamen%20Majapahit', '_blank')}
+                  onClick={() => window.open('https://wa.me/6285714548773?text=Halo,%20saya%20ingin%20konsultasi%20gratis%20untuk%20proyek%20ornamen%20Majapahit', '_blank')}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Konsultasi Gratis

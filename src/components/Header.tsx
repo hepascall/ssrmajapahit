@@ -56,7 +56,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <Button
-              onClick={() => window.open('https://wa.me/6281234567890', '_blank')}
+              onClick={() => window.open('https://wa.me/6285714548773', '_blank')}
               className="gold-gradient hover:opacity-90 smooth-transition"
             >
               <Phone className="w-4 h-4 mr-2" />
@@ -87,7 +87,7 @@ const Header = () => {
                 </button>
               ))}
               <Button
-                onClick={() => window.open('https://wa.me/6281234567890', '_blank')}
+                onClick={() => window.open('https://wa.me/6285714548773', '_blank')}
                 className="gold-gradient hover:opacity-90 smooth-transition w-full mt-4"
               >
                 <Phone className="w-4 h-4 mr-2" />

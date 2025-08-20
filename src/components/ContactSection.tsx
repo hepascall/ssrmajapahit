@@ -44,8 +44,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: 'Telepon',
-      value: '(031) 123-4567',
-      action: () => window.open('tel:+62311234567', '_blank'),
+      value: '085714548773',
+      action: () => window.open('tel:+62085714548773', '_blank'),
       color: 'text-blue-600'
     },
     {
@@ -58,8 +58,8 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: 'Alamat Workshop',
-      value: 'Jl. Majapahit No. 123, Surabaya',
-      action: () => window.open('https://maps.google.com/?q=SSR+Majapahit+Surabaya', '_blank'),
+      value: 'Jl. Sekarputih, Mergelo, Kedundung, Magersari, Mojokerto',
+      action: () => window.open('https://www.google.com/maps?q=GFP7%2B6J9+PT+SUMBER+SEKARPUTIH+RAYA,+Lingkungan+Jl.+Sekarputih,+RT.04%2FRW.02,+Mergelo,+Kedundung,+Kec.+Magersari,+Kota+Mojokerto,+Jawa+Timur+61316&output=embed', '_blank'),
       color: 'text-primary'
     }
   ];
@@ -290,13 +290,13 @@ const ContactSection = () => {
                 <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h4 className="font-bold text-primary mb-2">SSR Majapahit Workshop</h4>
                 <p className="text-muted-foreground mb-4">
-                  Jl. Majapahit No. 123, Surabaya<br />
-                  Jawa Timur 60123
+                  Jl. Sekarputih, Mergelo, Kedundung<br />
+                  Magersari, Mojokerto, Jawa Timur 61316
                 </p>
                 <Button 
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary hover:text-white"
-                  onClick={() => window.open('https://maps.google.com/?q=SSR+Majapahit+Surabaya', '_blank')}
+                  onClick={() => window.open('https://www.google.com/maps?q=GFP7%2B6J9+PT+SUMBER+SEKARPUTIH+RAYA,+Lingkungan+Jl.+Sekarputih,+RT.04%2FRW.02,+Mergelo,+Kedundung,+Kec.+Magersari,+Kota+Mojokerto,+Jawa+Timur+61316&output=embed', '_blank')}
                 >
                   <MapPin className="w-4 h-4 mr-2" />
                   Buka di Google Maps

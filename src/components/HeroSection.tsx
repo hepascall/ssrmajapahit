@@ -83,7 +83,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg smooth-transition transform hover:scale-105 gold-shadow"
-              onClick={() => window.open('https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi%20gratis%20untuk%20proyek%20ornamen%20Majapahit', '_blank')}
+              onClick={() => window.open('https://wa.me/6285714548773?text=Halo,%20saya%20ingin%20konsultasi%20gratis%20untuk%20proyek%20ornamen%20Majapahit', '_blank')}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Konsultasi Gratis

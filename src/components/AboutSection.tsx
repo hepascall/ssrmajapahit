@@ -90,7 +90,7 @@ const AboutSection = () => {
 
           {/* Right Content - Team Photo */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden majapahit-shadow">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden majapahit-shadow">
               <img 
                 src="/lovable-uploads/0a3092d0-8599-449a-87d3-0a080e0db3ca.png" 
                 alt="Tim Ahli SSR Majapahit - Tukang dan desainer berpengalaman sedang bekerja di lokasi proyek"
