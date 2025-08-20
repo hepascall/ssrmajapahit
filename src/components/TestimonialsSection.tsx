@@ -8,11 +8,11 @@ const TestimonialsSection = () => {
     {
       id: 1,
       name: 'Budi Santoso',
-      location: 'Surabaya',
-      role: 'Pemilik Rumah',
+      location: 'Madura',
+      role: 'Kepala Desa',
       rating: 5,
-      review: 'Hasil gapura Majapahit di rumah saya sangat menakjubkan! Tim SSR Majapahit sangat profesional, detail pengerjaan sempurna, dan selesai tepat waktu. Tetangga selalu memuji keindahan gapura ini. Sangat puas dengan pelayanan dan kualitasnya.',
-      project: 'Gapura Kerajaan Majapahit 12 meter',
+      review: 'Hasil Gapura Majapahit di Desa Kalangan Prao sangat menakjubkan! Tim SSR Majapahit sangat profesional, detail pengerjaan sempurna, dan selesai tepat waktu. Warga setempat selalu memuji keindahan gapura ini. Sangat puas dengan pelayanan dan kualitasnya.',
+      project: 'Gapura Desa Kalangan Prao',
       initials: 'BS'
     },
     {
@@ -38,11 +38,11 @@ const TestimonialsSection = () => {
     {
       id: 4,
       name: 'Maya Kusuma',
-      location: 'Mojokerto',
-      role: 'Pemilik Cafe',
+      location: 'Ponorogo',
+      role: 'Humas Desa Kalimalang',
       rating: 5,
-      review: 'Ornamen Majapahit di cafe saya menjadi daya tarik utama pengunjung. Banyak yang datang khusus untuk berfoto dengan background ornamen yang indah. Investasi yang sangat worthit untuk bisnis saya. Terima kasih SSR Majapahit!',
-      project: 'Ornamen Cafe & Gapura Masuk',
+      review: 'Gapura dan Ornamen yang dibangun oleh tim SSR Majapahit di desa kami menjadi daya tarik tersendiri. Banyak yang memuji keindahannya, khususnya para pegawai desa ataupun warga desa yang melintasi dijalan desa kami. Terima kasih SSR Majapahit!',
+      project: 'Gapura dan Ornamen Desa Kalimalang',
       initials: 'MK'
     }
   ];

@@ -59,7 +59,7 @@ const ContactSection = () => {
       icon: MapPin,
       title: 'Alamat Workshop',
       value: 'Jl. Sekarputih, Mergelo, Kedundung, Magersari, Mojokerto',
-      action: () => window.open('https://www.google.com/maps?q=GFP7%2B6J9+PT+SUMBER+SEKARPUTIH+RAYA,+Lingkungan+Jl.+Sekarputih,+RT.04%2FRW.02,+Mergelo,+Kedundung,+Kec.+Magersari,+Kota+Mojokerto,+Jawa+Timur+61316&output=embed', '_blank'),
+      action: () => window.open('https://maps.app.goo.gl/tiXU8dBoYT946Tbb7', '_blank'),
       color: 'text-primary'
     }
   ];
@@ -285,23 +285,17 @@ const ContactSection = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="aspect-video bg-accent/20 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h4 className="font-bold text-primary mb-2">SSR Majapahit Workshop</h4>
-                <p className="text-muted-foreground mb-4">
-                  Jl. Sekarputih, Mergelo, Kedundung<br />
-                  Magersari, Mojokerto, Jawa Timur 61316
-                </p>
-                <Button 
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-white"
-                  onClick={() => window.open('https://www.google.com/maps?q=GFP7%2B6J9+PT+SUMBER+SEKARPUTIH+RAYA,+Lingkungan+Jl.+Sekarputih,+RT.04%2FRW.02,+Mergelo,+Kedundung,+Kec.+Magersari,+Kota+Mojokerto,+Jawa+Timur+61316&output=embed', '_blank')}
-                >
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Buka di Google Maps
-                </Button>
-              </div>
+            <div className="aspect-video bg-accent/20 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.654!2d112.42!3d-7.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78182f5c123456%3A0x7890abcdef123456!2sJl.%20Sekarputih%2C%20Mergelo%2C%20Kedundung%2C%20Kec.%20Magersari%2C%20Kota%20Mojokerto%2C%20Jawa%20Timur%2061316!5e0!3m2!1sen!2sid!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="SSR Majapahit Workshop Location"
+              />
             </div>
           </CardContent>
         </Card>

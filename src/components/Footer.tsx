@@ -102,7 +102,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-yellow-300" />
-                <span>+62 812-3456-7890</span>
+                <span>+6285714548773</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-yellow-300" />
@@ -110,7 +110,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-yellow-300 mt-0.5" />
-                <span>Jl. Majapahit No. 123<br />Surabaya, Jawa Timur</span>
+                <span>Jl. Sekarputih, RT.04/RW.02, Mergelo, Kedundung, Kec. Magersari, Kota Mojokerto, Jawa Timur 61316</span>
               </div>
             </div>
           </div>
