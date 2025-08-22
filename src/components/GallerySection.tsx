@@ -96,6 +96,28 @@ const GallerySection = () => {
       image: '/lovable-uploads/75498cf9-dc78-4656-919f-70928199de53.png',
       tags: ['Mandala', 'Surya Majapahit', 'Simetris']
     },
+    {
+      id: 9,
+      title: 'Pagar Gapura Bata Merah Kompleks',
+      category: 'pagar',
+      year: '2024',
+      location: 'Mojokerto',
+      description: 'Pagar gapura tradisional dengan bata merah dan ornamen geometris',
+      before: true,
+      image: '/lovable-uploads/c7dd5ac3-9d02-443d-b8de-cf40cf34b52b.png',
+      tags: ['Bata Merah', 'Gapura', 'Ornamen Geometris']
+    },
+    {
+      id: 10,
+      title: 'Pagar Gapura Minimalis Modern',
+      category: 'pagar',
+      year: '2024',
+      location: 'Mojokerto',
+      description: 'Pagar gapura modern dengan desain minimalis bergaya Majapahit',
+      before: true,
+      image: '/lovable-uploads/67721c93-6901-45ae-a1d0-ff6f65f19300.png',
+      tags: ['Modern', 'Minimalis', 'Gapura']
+    },
   ];
 
   const filteredItems = selectedCategory === 'all' 
