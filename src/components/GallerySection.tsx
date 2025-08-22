@@ -74,6 +74,28 @@ const GallerySection = () => {
       before: true,
       tags: ['Batu Alam', 'Ornamen Besi', 'Mewah']
     },
+    {
+      id: 7,
+      title: 'Ornamen Gunungan Majapahit',
+      category: 'ornamen',
+      year: '2024',
+      location: 'Mojokerto',
+      description: 'Ornamen tradisional gunungan dengan ukiran motif klasik Majapahit',
+      before: true,
+      image: '/lovable-uploads/64ce9437-08ca-4cc6-a6f4-3b7eb4e80d4d.png',
+      tags: ['Gunungan', 'Ukiran Klasik', 'Tradisional']
+    },
+    {
+      id: 8,
+      title: 'Ornamen Mandala Surya Majapahit',
+      category: 'ornamen',
+      year: '2024',
+      location: 'Mojokerto',
+      description: 'Ornamen mandala dengan lambang Surya Majapahit dan motif simetris',
+      before: true,
+      image: '/lovable-uploads/75498cf9-dc78-4656-919f-70928199de53.png',
+      tags: ['Mandala', 'Surya Majapahit', 'Simetris']
+    },
   ];
 
   const filteredItems = selectedCategory === 'all' 
@@ -136,17 +158,25 @@ const GallerySection = () => {
                   </div>
                 </div>
 
-                {/* Placeholder Image with Pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center text-white/80">
-                      {item.category === 'gapura' && <Crown className="w-12 h-12 mx-auto mb-2" />}
-                      {item.category === 'ornamen' && <Palette className="w-12 h-12 mx-auto mb-2" />}
-                      {item.category === 'pagar' && <Shield className="w-12 h-12 mx-auto mb-2" />}
-                      <p className="text-sm font-medium">{item.title}</p>
+                {/* Image or Placeholder */}
+                {item.image ? (
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center text-white/80">
+                        {item.category === 'gapura' && <Crown className="w-12 h-12 mx-auto mb-2" />}
+                        {item.category === 'ornamen' && <Palette className="w-12 h-12 mx-auto mb-2" />}
+                        {item.category === 'pagar' && <Shield className="w-12 h-12 mx-auto mb-2" />}
+                        <p className="text-sm font-medium">{item.title}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
