@@ -118,6 +118,28 @@ const GallerySection = () => {
       image: '/lovable-uploads/67721c93-6901-45ae-a1d0-ff6f65f19300.png',
       tags: ['Modern', 'Minimalis', 'Gapura']
     },
+    {
+      id: 11,
+      title: 'Gapura Desa Kalangan Prao',
+      category: 'gapura',
+      year: '2024',
+      location: 'Madura',
+      description: 'Gapura entrance desa dengan arsitektur tradisional Majapahit bata merah',
+      before: true,
+      image: '/lovable-uploads/59d6f460-bb23-4cd3-8c64-07e570dca0d6.png',
+      tags: ['Entrance Desa', 'Bata Merah', 'Tradisional']
+    },
+    {
+      id: 12,
+      title: 'Gapura Desa Kalangan Prao Detail',
+      category: 'gapura',
+      year: '2024',
+      location: 'Madura',
+      description: 'Detail konstruksi gapura dengan ornamen bertingkat dan papan nama desa',
+      before: true,
+      image: '/lovable-uploads/fe51b027-bb0d-46ce-baf5-534692926663.png',
+      tags: ['Detail Konstruksi', 'Ornamen Bertingkat', 'Papan Nama']
+    },
   ];
 
   const filteredItems = selectedCategory === 'all' 
