@@ -176,10 +176,10 @@ All colors MUST be HSL.
     position: relative;
   }
   
-  .ornament-border::before {
+  .ornament-border::after {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: -8px;
     left: 50%;
     width: 60px;
     height: 4px;

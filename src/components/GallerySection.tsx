@@ -15,66 +15,6 @@ const GallerySection = () => {
 
   const portfolioItems = [
     {
-      id: 1,
-      title: 'Gapura Kerajaan Majapahit Klasik',
-      category: 'gapura',
-      year: '2024',
-      location: 'Surabaya',
-      description: 'Gapura bergaya klasik dengan ornamen ukir tradisional dan finishing premium',
-      before: true,
-      tags: ['15 meter', 'Batu Bata Merah', 'Ukiran Tradisional']
-    },
-    {
-      id: 2,
-      title: 'Relief Dinding Motif Majapahit',
-      category: 'ornamen',
-      year: '2024',
-      location: 'Malang',
-      description: 'Relief 3D dengan motif flora fauna khas era Majapahit',
-      before: true,
-      tags: ['Relief 3D', 'Motif Flora', 'Eksterior']
-    },
-    {
-      id: 3,
-      title: 'Pagar Artistik Kombinasi',
-      category: 'pagar',
-      year: '2023',
-      location: 'Sidoarjo',
-      description: 'Pagar kombinasi besi tempa dan batu bata dengan motif geometris',
-      before: true,
-      tags: ['Besi Tempa', 'Anti Karat', '2.5 meter']
-    },
-    {
-      id: 4,
-      title: 'Gapura Modern Minimalis',
-      category: 'gapura',
-      year: '2024',
-      location: 'Mojokerto',
-      description: 'Interpretasi modern gapura Majapahit dengan desain minimalis',
-      before: false,
-      tags: ['Modern', '8 meter', 'Minimalis']
-    },
-    {
-      id: 5,
-      title: 'Ornamen Interior Ruang Tamu',
-      category: 'ornamen',
-      year: '2023',
-      location: 'Gresik',
-      description: 'Ornamen interior dengan ukiran detail motif Majapahit',
-      before: true,
-      tags: ['Interior', 'Ukiran Detail', 'Kayu Jati']
-    },
-    {
-      id: 6,
-      title: 'Pagar Depan Rumah Mewah',
-      category: 'pagar',
-      year: '2024',
-      location: 'Surabaya',
-      description: 'Pagar artistik dengan kombinasi batu alam dan ornamen besi',
-      before: true,
-      tags: ['Batu Alam', 'Ornamen Besi', 'Mewah']
-    },
-    {
       id: 7,
       title: 'Ornamen Gunungan Majapahit',
       category: 'ornamen',
