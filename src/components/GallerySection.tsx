@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Crown, Palette, Shield, Grid3X3, Eye, Calendar } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Crown, Palette, Shield, Grid3X3, Eye, Calendar, X } from 'lucide-react';
 
 const GallerySection = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -167,13 +168,44 @@ const GallerySection = () => {
                 
                 {/* View Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 smooth-transition">
-                  <Button 
-                    size="sm" 
-                    className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
-                  >
-                    <Eye className="w-4 h-4 mr-2" />
-                    Lihat Detail
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button 
+                        size="sm" 
+                        className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        Lihat Detail
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl w-full p-0 overflow-hidden">
+                      <div className="relative">
+                        <img 
+                          src={item.image} 
+                          alt={item.title}
+                          className="w-full h-auto max-h-[80vh] object-contain"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                          <h3 className="text-white text-xl font-bold mb-2">{item.title}</h3>
+                          <p className="text-white/90 text-sm mb-3">{item.description}</p>
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {item.tags.map((tag, index) => (
+                              <span key={index} className="bg-white/20 text-white px-2 py-1 rounded text-xs">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="flex items-center justify-between text-white/80 text-sm">
+                            <div className="flex items-center space-x-2">
+                              <Calendar className="w-3 h-3" />
+                              <span>{item.year}</span>
+                            </div>
+                            <span>{item.location}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
 
                 {/* Decorative border */}

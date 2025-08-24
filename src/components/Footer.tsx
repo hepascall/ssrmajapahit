@@ -138,9 +138,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <span className="text-white/80 hover:text-yellow-200 smooth-transition cursor-pointer">
+                  <button
+                    onClick={() => scrollToSection('services')}
+                    className="text-white/80 hover:text-yellow-200 smooth-transition text-left"
+                  >
                     {service}
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>
