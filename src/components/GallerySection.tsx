@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
@@ -6,6 +6,8 @@ import { Crown, Palette, Shield, Grid3X3, Eye, Calendar, X } from 'lucide-react'
 
 const GallerySection = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [scrollDirection, setScrollDirection] = useState(1); // 1 for right, -1 for left
 
   const categories = [
     { id: 'all', label: 'Semua Karya', icon: Grid3X3 },
@@ -87,6 +89,34 @@ const GallerySection = () => {
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === selectedCategory);
 
+  // Auto-scroll effect for "all" category
+  useEffect(() => {
+    if (selectedCategory === 'all' && scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const scrollSpeed = 1; // pixels per interval
+      const scrollInterval = 20; // milliseconds
+      
+      const autoScroll = () => {
+        if (!container) return;
+        
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        const currentScroll = container.scrollLeft;
+        
+        if (scrollDirection === 1 && currentScroll >= maxScroll) {
+          setScrollDirection(-1);
+        } else if (scrollDirection === -1 && currentScroll <= 0) {
+          setScrollDirection(1);
+        }
+        
+        container.scrollLeft += scrollSpeed * scrollDirection;
+      };
+      
+      const interval = setInterval(autoScroll, scrollInterval);
+      
+      return () => clearInterval(interval);
+    }
+  }, [selectedCategory, scrollDirection]);
+
   return (
     <section id="gallery" className="py-20 bg-gradient-to-br from-background to-accent/10">
       <div className="container mx-auto px-4">
@@ -121,9 +151,138 @@ const GallerySection = () => {
           ))}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {filteredItems.map((item) => (
+        {/* Gallery Display */}
+        {selectedCategory === 'all' ? (
+          // Horizontal Scrolling Carousel for "All Works"
+          <div 
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide mb-12 pb-4"
+            style={{ scrollBehavior: 'auto' }}
+          >
+            {filteredItems.map((item) => (
+              <div key={item.id} className="flex-shrink-0 w-80">
+                <Card className="group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden h-full">
+                  {/* Image Container */}
+                  <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
+                    {/* Before/After Badge */}
+                    {item.before && (
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          Selesai
+                        </span>
+                      </div>
+                    )}
+                    
+                    {/* Category Badge */}
+                    <div className="absolute top-4 right-4 z-10">
+                      <div className="bg-black/50 backdrop-blur-sm text-white px-2 py-1 rounded text-xs">
+                        {categories.find(c => c.id === item.category)?.label}
+                      </div>
+                    </div>
+
+                    {/* Image or Placeholder */}
+                    {item.image ? (
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20">
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="text-center text-white/80">
+                            {item.category === 'gapura' && <Crown className="w-12 h-12 mx-auto mb-2" />}
+                            {item.category === 'ornamen' && <Palette className="w-12 h-12 mx-auto mb-2" />}
+                            {item.category === 'pagar' && <Shield className="w-12 h-12 mx-auto mb-2" />}
+                            <p className="text-sm font-medium">{item.title}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    
+                    {/* View Button */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 smooth-transition">
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button 
+                            size="sm" 
+                            className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
+                          >
+                            <Eye className="w-4 h-4 mr-2" />
+                            Lihat Detail
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden">
+                          <div className="relative">
+                            <img 
+                              src={item.image} 
+                              alt={item.title}
+                              className="w-full h-auto max-h-[80vh] object-contain"
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                              <h3 className="text-white text-xl font-bold mb-2">{item.title}</h3>
+                              <p className="text-white/90 text-sm mb-3">{item.description}</p>
+                              <div className="flex flex-wrap gap-2 mb-3">
+                                {item.tags.map((tag, index) => (
+                                  <span key={index} className="bg-white/20 text-white px-2 py-1 rounded text-xs">
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                              <div className="flex items-center justify-between text-white/80 text-sm">
+                                <div className="flex items-center space-x-2">
+                                  <Calendar className="w-3 h-3" />
+                                  <span>{item.year}</span>
+                                </div>
+                                <span>{item.location}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
+
+                    {/* Decorative border */}
+                    <div className="absolute inset-2 border border-white/20 rounded pointer-events-none opacity-0 group-hover:opacity-100 smooth-transition" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-bold text-primary text-sm leading-tight">{item.title}</h3>
+                    </div>
+                    
+                    <p className="text-muted-foreground text-xs mb-3 leading-relaxed line-clamp-2">{item.description}</p>
+                    
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1 mb-3">
+                      {item.tags.slice(0, 2).map((tag, index) => (
+                        <span key={index} className="bg-accent text-accent-foreground px-2 py-1 rounded text-xs">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Meta Info */}
+                    <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t border-border">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-3 h-3" />
+                        <span>{item.year}</span>
+                      </div>
+                      <span>{item.location}</span>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
+        ) : (
+          // Grid Layout for Other Categories
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {filteredItems.map((item) => (
             <Card key={item.id} className="group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden">
               {/* Image Container */}
               <div className="relative h-64 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
@@ -238,9 +397,10 @@ const GallerySection = () => {
                   <span>{item.location}</span>
                 </div>
               </div>
-            </Card>
-          ))}
-        </div>
+              </Card>
+            ))}
+          </div>
+        )}
 
         {/* CTA Section */}
         <div className="text-center">
