@@ -2,8 +2,14 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote, User, MapPin } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { useScrollAnimation, useScrollAnimations } from '@/hooks/useScrollAnimation';
 
 const TestimonialsSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [statsRef, statsVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [setTestimonialRef, testimonialsVisible] = useScrollAnimations(4, { threshold: 0.3 });
+  const [summaryRef, summaryVisible] = useScrollAnimation({ threshold: 0.3 });
+  
   const testimonials = [
     {
       id: 1,
@@ -58,7 +64,10 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 bg-gradient-to-br from-accent/5 to-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <div className="ornament-border pb-4 mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Testimoni Klien
@@ -70,7 +79,10 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div 
+          ref={statsRef}
+          className={`grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 scroll-animate ${statsVisible ? 'animate-fade-in-up' : ''}`}
+        >
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="w-20 h-20 rounded-full gold-gradient flex items-center justify-center mx-auto mb-4">
@@ -83,8 +95,12 @@ const TestimonialsSection = () => {
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="group hover:shadow-2xl smooth-transition majapahit-shadow">
+          {testimonials.map((testimonial, index) => (
+            <Card 
+              key={testimonial.id} 
+              ref={setTestimonialRef(index)}
+              className={`group hover:shadow-2xl smooth-transition majapahit-shadow scroll-animate ${testimonialsVisible[index] ? (index % 2 === 0 ? 'animate-slide-in-left' : 'animate-fade-in-right') : ''}`}
+            >
               <CardContent className="p-8">
                 {/* Quote Icon */}
                 <div className="mb-6">
@@ -132,7 +148,10 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Overall Rating Summary */}
-        <div className="text-center">
+        <div 
+          ref={summaryRef}
+          className={`text-center scroll-animate ${summaryVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <Card className="max-w-2xl mx-auto majapahit-shadow">
             <CardContent className="p-8">
               <div className="flex justify-center mb-4">

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Eye, Crown, Star } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const HeroSection = () => {
+  const [heroRef, heroVisible] = useScrollAnimation({ threshold: 0.3 });
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -32,7 +35,10 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div 
+        ref={heroRef}
+        className={`relative z-10 container mx-auto px-4 text-center scroll-animate ${heroVisible ? 'animate-fade-in-up' : ''}`}
+      >
         <div className="max-w-4xl mx-auto">
           {/* Crown Icon */}
           <div className="mb-8 flex justify-center">

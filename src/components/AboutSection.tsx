@@ -1,8 +1,16 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Crown, Target, Eye, Users, Award, Hammer } from 'lucide-react';
+import { useScrollAnimation, useScrollAnimations } from '@/hooks/useScrollAnimation';
 
 const AboutSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [visionRef, visionVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [missionRef, missionVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [imageRef, imageVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [philosophyRef, philosophyVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [setValuesRef, valuesVisible] = useScrollAnimations(4, { threshold: 0.3 });
+  
   const values = [
     {
       icon: Crown,
@@ -30,7 +38,10 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-gradient-to-br from-background to-accent/20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <div className="ornament-border pb-4 mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Tentang Kami
@@ -46,7 +57,10 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Vision */}
-            <Card className="majapahit-shadow border-l-4 border-l-primary">
+            <Card 
+              ref={visionRef}
+              className={`majapahit-shadow border-l-4 border-l-primary scroll-animate ${visionVisible ? 'animate-slide-in-left' : ''}`}
+            >
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center">
@@ -62,7 +76,10 @@ const AboutSection = () => {
             </Card>
 
             {/* Mission */}
-            <Card className="majapahit-shadow border-l-4 border-l-secondary">
+            <Card 
+              ref={missionRef}
+              className={`majapahit-shadow border-l-4 border-l-secondary scroll-animate ${missionVisible ? 'animate-fade-in-right' : ''}`}
+            >
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="w-12 h-12 rounded-full majapahit-gradient flex items-center justify-center">
@@ -89,7 +106,10 @@ const AboutSection = () => {
           </div>
 
           {/* Right Content - Team Photo */}
-          <div className="relative">
+          <div 
+            ref={imageRef}
+            className={`relative scroll-animate ${imageVisible ? 'animate-slide-in-right' : ''}`}
+          >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden majapahit-shadow">
               <img 
                 src="/lovable-uploads/0a3092d0-8599-449a-87d3-0a080e0db3ca.png" 
@@ -109,7 +129,10 @@ const AboutSection = () => {
 
         {/* Philosophy & Values */}
         <div className="mb-16">
-          <div className="text-center mb-12">
+          <div 
+            ref={philosophyRef}
+            className={`text-center mb-12 scroll-animate ${philosophyVisible ? 'animate-fade-in-up' : ''}`}
+          >
             <h3 className="text-3xl font-bold text-primary mb-4">Filosofi Desain</h3>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Kami percaya bahwa setiap ornamen bukan hanya elemen dekoratif, tetapi juga cerminan identitas budaya 
@@ -120,7 +143,11 @@ const AboutSection = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <Card key={index} className="text-center group hover:shadow-lg smooth-transition transform hover:-translate-y-2 majapahit-shadow">
+              <Card 
+                key={index} 
+                ref={setValuesRef(index)}
+                className={`text-center group hover:shadow-lg smooth-transition transform hover:-translate-y-2 majapahit-shadow scroll-animate ${valuesVisible[index] ? 'animate-fade-in-up' : ''}`}
+              >
                 <CardContent className="p-6">
                   <div className="w-16 h-16 rounded-full gold-gradient flex items-center justify-center mx-auto mb-4 group-hover:scale-110 smooth-transition">
                     <value.icon className="w-8 h-8 text-white" />

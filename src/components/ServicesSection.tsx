@@ -2,8 +2,15 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Crown, Palette, Shield, Clock, CheckCircle, MessageCircle } from 'lucide-react';
+import { useScrollAnimation, useScrollAnimations } from '@/hooks/useScrollAnimation';
 
 const ServicesSection = () => {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [setServiceRef, servicesVisible] = useScrollAnimations(3, { threshold: 0.3 });
+  const [processHeaderRef, processHeaderVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [setProcessRef, processVisible] = useScrollAnimations(4, { threshold: 0.3 });
+  const [ctaRef, ctaVisible] = useScrollAnimation({ threshold: 0.3 });
+  
   const services = [
     {
       icon: Crown,
@@ -57,7 +64,10 @@ const ServicesSection = () => {
     <section id="services" className="py-20 bg-gradient-to-br from-accent/10 to-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <div className="ornament-border pb-4 mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Layanan Kami
@@ -71,7 +81,11 @@ const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden">
+            <Card 
+              key={index} 
+              ref={setServiceRef(index)}
+              className={`group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden scroll-animate ${servicesVisible[index] ? 'animate-fade-in-up' : ''}`}
+            >
               {/* Service Image */}
               <div className="h-64 relative overflow-hidden">
                 {index === 0 ? (
@@ -153,14 +167,21 @@ const ServicesSection = () => {
 
         {/* Process Steps */}
         <div className="mb-12">
-          <div className="text-center mb-12">
+          <div 
+            ref={processHeaderRef}
+            className={`text-center mb-12 scroll-animate ${processHeaderVisible ? 'animate-fade-in-up' : ''}`}
+          >
             <h3 className="text-3xl font-bold text-primary mb-4">Proses Pengerjaan</h3>
             <p className="text-xl text-muted-foreground">Tahapan sistematis untuk hasil yang optimal</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
             {processSteps.map((process, index) => (
-              <div key={index} className="text-center group">
+              <div 
+                key={index} 
+                ref={setProcessRef(index)}
+                className={`text-center group scroll-animate ${processVisible[index] ? 'animate-fade-in-up' : ''}`}
+              >
                 <div className="relative mb-6">
                   {/* Step number */}
                   <div className="w-16 h-16 rounded-full gold-gradient flex items-center justify-center mx-auto text-white font-bold text-xl group-hover:scale-110 smooth-transition">
@@ -179,7 +200,10 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center">
+        <div 
+          ref={ctaRef}
+          className={`text-center scroll-animate ${ctaVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <Card className="max-w-2xl mx-auto majapahit-shadow">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-primary mb-4">Siap Mulai Proyek Anda?</h3>
