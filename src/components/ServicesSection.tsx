@@ -80,12 +80,21 @@ const ServicesSection = () => {
 
         {/* Services Grid */}
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              ref={setServiceRef(index)}
-              className={`group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden scroll-animate ${servicesVisible[index] ? 'animate-fade-in-up' : ''}`}
-            >
+          {services.map((service, index) => {
+            const getAnimationClass = () => {
+              if (!servicesVisible[index]) return '';
+              if (index === 0) return 'animate-fade-in-left';
+              if (index === 1) return 'animate-slide-in-right'; 
+              if (index === 2) return 'animate-fade-in-down';
+              return 'animate-fade-in-up';
+            };
+            
+            return (
+              <Card 
+                key={index} 
+                ref={setServiceRef(index)}
+                className={`group hover:shadow-2xl smooth-transition transform hover:-translate-y-2 majapahit-shadow overflow-hidden scroll-animate ${getAnimationClass()}`}
+              >
               {/* Service Image */}
               <div className="h-64 relative overflow-hidden">
                 {index === 0 ? (
@@ -162,7 +171,8 @@ const ServicesSection = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
+            );
+          })}
         </div>
 
         {/* Process Steps */}
