@@ -61,7 +61,8 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'majapahit-dark': 'hsl(var(--majapahit-dark))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
