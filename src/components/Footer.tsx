@@ -79,7 +79,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-primary to-primary/90 text-white">
+    <footer className="bg-gradient-to-br from-primary to-primary/90 dark:bg-background text-white dark:text-foreground">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
