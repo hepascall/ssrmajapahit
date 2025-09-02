@@ -78,40 +78,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 52% 9%;
-    --foreground: 220 13% 91%;
+    --background: 20 25% 6%;
+    --foreground: 35 50% 92%;
 
-    --card: 220 39% 12%;
-    --card-foreground: 220 13% 91%;
+    --card: 20 25% 10%;
+    --card-foreground: 35 50% 92%;
 
-    --popover: 220 39% 12%;
-    --popover-foreground: 220 13% 91%;
+    --popover: 20 25% 10%;
+    --popover-foreground: 35 50% 92%;
 
-    --primary: 189 100% 50%;
-    --primary-foreground: 220 52% 9%;
+    --primary: 45 75% 55%;
+    --primary-foreground: 20 25% 6%;
 
-    --secondary: 220 39% 18%;
-    --secondary-foreground: 220 13% 91%;
+    --secondary: 15 60% 40%;
+    --secondary-foreground: 35 50% 92%;
 
-    --muted: 220 39% 12%;
-    --muted-foreground: 220 9% 66%;
+    --muted: 20 20% 15%;
+    --muted-foreground: 25 15% 65%;
 
-    --accent: 199 89% 61%;
-    --accent-foreground: 220 52% 9%;
+    --accent: 20 20% 18%;
+    --accent-foreground: 35 50% 92%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 39% 18%;
-    --input: 220 39% 18%;
-    --ring: 189 100% 50%;
+    --border: 20 20% 20%;
+    --input: 20 20% 18%;
+    --ring: 45 75% 55%;
     
     /* Dark mode Majapahit colors */
-    --majapahit-gold: 199 89% 61%;
-    --majapahit-terracotta: 189 100% 50%;
-    --majapahit-brick: 220 39% 18%;
-    --majapahit-cream: 220 39% 12%;
-    --majapahit-dark: 220 52% 9%;
+    --majapahit-gold: 45 75% 55%;
+    --majapahit-terracotta: 15 60% 50%;
+    --majapahit-brick: 10 55% 40%;
+    --majapahit-cream: 35 30% 20%;
+    --majapahit-dark: 20 30% 8%;
     
     /* Dark mode gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--majapahit-terracotta)));
@@ -121,14 +121,14 @@ All colors MUST be HSL.
     /* Dark mode shadows */
     --shadow-majapahit: 0 10px 30px -10px hsl(var(--majapahit-gold) / 0.2);
     --shadow-gold: 0 8px 25px -8px hsl(var(--majapahit-gold) / 0.3);
-    --sidebar-background: 220 52% 9%;
-    --sidebar-foreground: 220 13% 91%;
-    --sidebar-primary: 189 100% 50%;
-    --sidebar-primary-foreground: 220 52% 9%;
-    --sidebar-accent: 220 39% 18%;
-    --sidebar-accent-foreground: 220 13% 91%;
-    --sidebar-border: 220 39% 18%;
-    --sidebar-ring: 189 100% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
